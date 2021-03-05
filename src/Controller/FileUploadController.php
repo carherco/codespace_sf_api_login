@@ -19,7 +19,7 @@ class FileUploadController extends AbstractController
         dump($file);
 
         $directory = $this->getParameter('upload_images_dir');
-        $fileName = 'patata.jpg';
+        $fileName = $file->getClientOriginalName();
         $file->move($directory, $fileName);
         
         $data['nombre'] = $nombre;
